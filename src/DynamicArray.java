@@ -1,9 +1,9 @@
-public class DynamicArray<T> {
+public static class DynamicArray<T> {
 
     private T[] array;
     public int length;
 
-    public  DynamicArray(){}
+    public  DynamicArray(){this.array = (T[]) new Object[]{};}
     public DynamicArray(T[] array){
         setArray(array);
     }
