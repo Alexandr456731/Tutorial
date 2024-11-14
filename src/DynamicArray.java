@@ -3,6 +3,7 @@ public class DynamicArray<T> {
     private T[] Array;
     public int length;
 
+    public  DynamicArray(){}
     public DynamicArray(T[] array){
         setArray(array);
     }
