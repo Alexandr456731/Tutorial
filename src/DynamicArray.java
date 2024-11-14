@@ -1,6 +1,6 @@
 public class DynamicArray<T> {
 
-    private T[] Array;
+    private T[] array;
     public int length;
 
     public  DynamicArray(){}
@@ -9,11 +9,11 @@ public class DynamicArray<T> {
     }
 
     private void setArray(T[] array){
-        this.Array = array;
+        this.array = array;
     }
 
     public void add(T el){
-        T[] oldArray = this.Array;
+        T[] oldArray = this.array.clone();
         Object[] array = new Object[oldArray.length + 1];
 
         for(byte i = 0; i < oldArray.length; i++){
@@ -22,10 +22,10 @@ public class DynamicArray<T> {
         array[array.length - 1] = el;
 
         this.length = array.length;
-        this.Array = (T[]) array;
+        this.array = (T[]) array;
     }
     public void remove(int index){
-        T[] oldArray = this.Array;
+        T[] oldArray = this.array.clone();
         Object[] array = new Object[oldArray.length - 1];
 
         for(byte i = 0; i < oldArray.length; i++){
@@ -39,9 +39,9 @@ public class DynamicArray<T> {
         }
 
         this.length = array.length;
-        this.Array = (T[]) array;
+        this.array = (T[]) array;
     }
     public T get(int index){
-        return this.Array[index];
+        return this.array[index];
     }
 }
