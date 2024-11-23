@@ -1,4 +1,4 @@
-public static class DynamicArray<T>  {
+public class DynamicArray<T>  {
 
     private T[] array;
     private int length;
@@ -42,6 +42,8 @@ public static class DynamicArray<T>  {
     }
 
     public T get(int index){
+        if(index >= this.length)
+            throw new ArrayIndexOutOfBoundsException();
         return this.array[index];
     }
 }
