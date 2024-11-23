@@ -12,7 +12,8 @@ public class Pair <T1, T2>{
     }
 
     public static <T1, T2>Pair  of(T1 el1, T2 el2){
-        return new Pair<T1, T2>(el1, el2);
+        if(el1 != null && el2 != null)return new Pair<T1, T2>(el1, el2);
+        return null;
     }
 
     public T1 getFirst(){
