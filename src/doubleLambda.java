@@ -36,7 +36,7 @@ public class doubleLambda {
         StringBuilder a = new StringBuilder(stroka);
         for(int i = 0; i < stroka.length();){
             if(a.charAt(i) == ' ') {
-                a = a.deleteCharAt(i);
+                a.deleteCharAt(i);
             } else {
                 i++;
             }
