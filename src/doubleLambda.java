@@ -34,12 +34,17 @@ public class doubleLambda {
     public static String delete(String stroka){
 
         StringBuilder a = new StringBuilder(stroka);
-        StringBuilder b = null;
-        for(int i = 0; i < stroka.length(); i++){
-            b = a.deleteCharAt(i);
+        for(int i = 0; i < stroka.length();){
+            if(a.charAt(i) == ' ') {
+                a = a.deleteCharAt(i);
+            } else {
+                i++;
+            }
         }
-        return b.toString();
+        return a.toString();
     }
+
+    
     public static String deleteSpaces(String stroka){
 
 
