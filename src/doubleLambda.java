@@ -4,14 +4,14 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-public class Main {
-    public static void doubleLambda(String[] args) {
+public class doubleLambda {
+    public static void main(String[] args) {
         Function<String[], String[]> fa = (a) -> {
 
             String[] newArray = new String[a.length];
             for(int i = 0; i < a.length; i++){
-                newArray[i] = a[i].trim();
-            }
+                newArray[i] = deleteSpaces(a[i]);
+            } new String();
             return newArray;
         };
 
@@ -24,10 +24,34 @@ public class Main {
             return newArray;
         });
 
-        String[] a = fb.apply(new String[]{"123", "fs", "nb     ", "vc"});
+        String[] a = fb.apply(new String[]{"123", "fs", "nb     ", "v         c"});
 
         for(int i = 0; i < a.length; i++){
             System.out.println(a[i]);
         }
+    }
+
+    public static String delete(String stroka){
+
+        StringBuilder a = new StringBuilder(stroka);
+        StringBuilder b = null;
+        for(int i = 0; i < stroka.length(); i++){
+            b = a.deleteCharAt(i);
+        }
+        return b.toString();
+    }
+    public static String deleteSpaces(String stroka){
+
+
+        for(int i = 0; i < stroka.length(); ){
+            if (stroka.charAt(i) == ' ') {
+                String a = stroka.substring(0, i);
+                String b = stroka.substring(i + 1, stroka.length());
+                stroka = a + b;
+            } else {
+                i++;
+            }
+        }
+        return stroka;
     }
 }
