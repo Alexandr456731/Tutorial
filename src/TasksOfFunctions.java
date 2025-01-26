@@ -1,10 +1,6 @@
 import java.util.*;
 
 public class TasksOfFunctions {
-    public static void main(String[] args){
-        ConsoleCalculator.getInt();
-    }
-
     public static int minFrom2 (int a, int b){
         if(a > b){
             return a;
