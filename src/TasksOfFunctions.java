@@ -62,7 +62,7 @@ public class TasksOfFunctions {
                 System.out.println("\"-\" - вычитаение");
                 System.out.println("\"*\" - умножение");
                 System.out.println("\"/\" - деление");
-                System.out.println("Введите тип действия: ");
+                System.out.print("Введите тип действия: ");
                 stroka = scan.nextLine();
 
                 switch (stroka){
@@ -104,7 +104,7 @@ public class TasksOfFunctions {
         }
 
         public static void main(){
-            System.out.println(calc(getInt(), getInt(), getOperation()));
+            System.out.println("Резкльтат: " + calc(getInt(), getInt(), getOperation()));
         }
     }
 }
