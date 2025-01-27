@@ -95,7 +95,7 @@ public class TasksOfFunctions {
                             return 1;
                         }
                     }else{
-                        return num1 - num2;
+                        return num1 / num2;
                     }
                 default:
                     System.out.println("ошибка");
