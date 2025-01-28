@@ -53,7 +53,7 @@ public class TasksOfFunctions {
             }
         }
 
-        public static char getOperation(){
+        public static Type getOperation(){
             String stroka = "e";
 
             boolean work = true;
@@ -73,18 +73,30 @@ public class TasksOfFunctions {
                         System.out.println("ошибка");
                 }
             }
-            return stroka.charAt(0);
+            switch (stroka){
+                case "+":
+                    return Type.ADDITION;
+                case "-":
+                    return Type.SUBTRACTION;
+                case "*":
+                    return Type.MULTIPLICATION;
+                case "/":
+                    return Type.DIVISION;
+                default:
+                    System.out.println("Произошла критическая ошибка!");
+                    return Type.ERROR;
+            }
         }
 
-        public static int calc(int num1, int num2, char operation){
+        public static int calc(int num1, int num2, Type operation){
             switch (operation){
-                case '+':
+                case Type.ADDITION:
                     return num1 + num2;
-                case '-':
+                case Type.SUBTRACTION:
                     return num1 - num2;
-                case '*':
+                case Type.MULTIPLICATION:
                     return num1 * num2;
-                case '/':
+                case Type.DIVISION:
                     if (num2 == 0) {
                         System.out.println("Делить на нуль нельзя!");
                         if (num1 == 0){
@@ -95,10 +107,12 @@ public class TasksOfFunctions {
                             return 1;
                         }
                     }else{
-                        return num1 / num2;
+                        return num1 - num2;
                     }
+                case ERROR:
+                    System.out.println("Прервано из-за ошибки!");
                 default:
-                    System.out.println("ошибка");
+                    System.out.println("Критическая ошибка");
                     return 0;
             }
         }
@@ -106,5 +120,9 @@ public class TasksOfFunctions {
         public static void main(){
             System.out.println("Резкльтат: " + calc(getInt(), getInt(), getOperation()));
         }
+
+        private enum Type {
+            ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION, ERROR}
+
     }
 }
