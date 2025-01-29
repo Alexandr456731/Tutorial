@@ -1,6 +1,8 @@
+import java.util.*;
+
 class ConsoleCalculator{
         private static Scanner scan = new Scanner(System.in);
-        public static int getInt(){
+        public static double getInt(){
             int number;
             while (true){
                 try{
@@ -44,12 +46,11 @@ class ConsoleCalculator{
                 case "/":
                     return Type.DIVISION;
                 default:
-                    System.out.println("Произошла критическая ошибка!");
-                    return Type.ERROR;
+                    throw new IllegalArgumentException("Вы ввели не то!");
             }
         }
 
-        public static int calc(int num1, int num2, Type operation){
+        public static double calc(double num1, double num2, Type operation){
             switch (operation){
                 case Type.ADDITION:
                     return num1 + num2;
@@ -70,11 +71,9 @@ class ConsoleCalculator{
                     }else{
                         return num1 - num2;
                     }
-                case ERROR:
-                    System.out.println("Прервано из-за ошибки!");
+                
                 default:
-                    System.out.println("Критическая ошибка");
-                    return 0;
+                    throw new IllegalArgumentException("Критическая ошибка");
             }
         }
 
@@ -83,6 +82,6 @@ class ConsoleCalculator{
         }
 
         private enum Type {
-            ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION, ERROR}
+            ADDITION, SUBTRACTION, MULTIPLICATION, DIVISION}
 
     }
