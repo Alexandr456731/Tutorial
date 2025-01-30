@@ -26,6 +26,7 @@ class ConsoleCalculator{
             System.out.println("\"/\" - деление");
             while (work){
                 System.out.print("Введите тип действия: ");
+                scan.nextLine();
                 stroka = scan.nextLine();
 
                 switch (stroka){
