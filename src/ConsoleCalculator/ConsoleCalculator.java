@@ -9,7 +9,7 @@ class ConsoleCalculator{
                 System.out.print("Введите число: ");
                 number = Double.parseDouble(scan.nextLine());
                 return number;
-            }catch (InputMismatchException e){
+            }catch (NumberFormatException e){
                 System.out.println("Ошибка!");
             }
         }
