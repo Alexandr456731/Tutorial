@@ -11,7 +11,6 @@ class ConsoleCalculator{
                 return number;
             }catch (InputMismatchException e){
                 System.out.println("Ошибка!");
-                scan.nextLine();
             }
         }
     }
